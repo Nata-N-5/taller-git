@@ -12,12 +12,14 @@ const rl = readline.createInterface({
 function preguntar(){//se crea la funcion para evaluar
   rl.question('Ingresa tu número: ', (respuesta) => { //muestra pregunta y se guarda lo que se escribe en "respuesta"
 
+     const numero = parseInt(respuesta);//convertir a numero entero para que funcione :v 
+
     //evaluar la respuesta 
-    if (respuesta === numeroSecreto) {
+    if (numero === numeroSecreto) {
       console.log("Correcto");
       rl.close(); // cerrar el programa
     } else {
-      const diferencia = Math.abs(respuesta - numeroSecreto);
+      const diferencia = Math.abs(numero- numeroSecreto);
       if (diferencia <= 5) {
         console.log("Caliente");
       } else {
